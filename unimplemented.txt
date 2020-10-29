@@ -1,0 +1,192 @@
+class openfl.display.DisplayObject extends openfl.events.EventDispatcher
+{
+	@:keep public var rotation(get, set):Float;
+	@:keep public var scaleX(get, set):Float;
+	@:keep public var scaleY(get, set):Float;
+	public var scale9Grid(get, set):Rectangle;
+	public var scrollRect(get, set):Rectangle;
+	@:keep public var transform(get, set):Transform;
+	
+	public var blendMode(get, set):BlendMode;
+	public var visible(get, set):Bool;
+	
+	public var cacheAsBitmap(get, set):Bool;
+	public var cacheAsBitmapMatrix(get, set):Matrix;
+	
+	public var mouseX(get, never):Float;
+	public var mouseY(get, never):Float;
+	
+	public var parent(default, null):DisplayObjectContainer;
+	public var root(get, never):DisplayObject;
+	public var loaderInfo(get, never):LoaderInfo;
+	public var stage(default, null):Stage;
+	
+	public var mask(get, set):DisplayObject;
+	public var name(get, set):String;
+	public var opaqueBackground:Null<Int>;
+	@:beta public var shader(get, set):Shader;
+	
+	public override function addEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false, priority:Int = 0, useWeakReference:Bool = false):Void {}
+	public override function dispatchEvent(event:Event):Bool {}
+	public function getBounds(targetCoordinateSpace:DisplayObject):Rectangle {}
+	public function getRect(targetCoordinateSpace:DisplayObject):Rectangle {}
+	public function globalToLocal(pos:Point):Point {}
+	public function hitTestObject(obj:DisplayObject):Bool {}
+	public function hitTestPoint(x:Float, y:Float, shapeFlag:Bool = false):Bool {}
+	public function invalidate():Void {}
+	public function localToGlobal(point:Point):Point {}
+	public override function removeEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false):Void {}
+}
+
+//====
+
+class openfl.display.InteractiveObject extends openfl.display.DisplayObject
+{
+	public var doubleClickEnabled:Bool;
+	public var focusRect:Null<Bool>;
+	public var mouseEnabled:Bool;
+	public var needsSoftKeyboard:Bool;
+	public var softKeyboardInputAreaOfInterest:Rectangle;
+	public var tabEnabled(get, set):Bool;
+	public var tabIndex(get, set):Int;
+}
+
+class openfl.events.EventDispatcher implements openfl.events.IEventDispatcher
+{
+	public function addEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false, priority:Int = 0, useWeakReference:Bool = false):Void {}
+	public function dispatchEvent(event:Event):Bool {}
+	public function hasEventListener(type:String):Bool {}
+	public function removeEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false):Void {}
+	public function willTrigger(type:String):Bool {}
+}
+
+interface openfl.events.IEventDispatcher
+{
+	public function addEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false, priority:Int = 0, useWeakReference:Bool = false):Void;
+	public function dispatchEvent(event:Event):Bool;
+	public function hasEventListener(type:String):Bool;
+	public function removeEventListener<T>(type:EventType<T>, listener:T->Void, useCapture:Bool = false):Void;
+	public function willTrigger(type:String):Bool;
+}
+
+//=== from openfl.text
+
+class openfl.text.Font extends lime.text.Font
+{
+	public var fontName(get, set):String;
+	public var fontStyle:FontStyle;
+	public var fontType:FontType;
+
+	public function new(name:String = null) {}
+	public static function enumerateFonts(enumerateDeviceFonts:Bool = false):Array<Font> {}
+	public static function fromBytes(bytes:ByteArray):Font {}
+	public static function fromFile(path:String):Font {}
+	public static function loadFromBytes(bytes:ByteArray):Future<Font> {}
+	public static function loadFromFile(path:String):Future<Font> {}
+	public static function loadFromName(path:String):Future<Font> {}
+	public static function registerFont(font:Dynamic):Void {}
+}
+
+@:enum abstract openfl.text.FontStyle(Null<Int>)
+{
+	public var BOLD = 0;
+	public var BOLD_ITALIC = 1;
+	public var ITALIC = 2;
+	public var REGULAR = 3;
+}
+
+@:enum abstract openfl.text.FontType(Null<Int>)
+{
+	public var DEVICE = 0;
+	public var EMBEDDED = 1;
+	public var EMBEDDED_CFF = 2;
+}
+
+class openfl.text.TextLineMetrics
+{
+	public var ascent:Float;
+	public var descent:Float;
+	public var height:Float;
+	public var leading:Float;
+	public var width:Float;
+	public var x:Float;
+
+	public function new(x:Float, width:Float, height:Float, ascent:Float, descent:Float, leading:Float) {}
+}
+
+class openfl.text.TextField extends openfl.display.InteractiveObject
+{
+	public function getCharBoundaries(charIndex:Int):Rectangle {}
+	public function getCharIndexAtPoint(x:Float, y:Float):Int {}
+	public function getFirstCharInParagraph(charIndex:Int):Int {}
+	public function getLineIndexAtPoint(x:Float, y:Float):Int {}
+	public function getLineIndexOfChar(charIndex:Int):Int {}
+	public function getLineLength(lineIndex:Int):Int {}
+	public function getLineMetrics(lineIndex:Int):TextLineMetrics {}
+	public function getLineOffset(lineIndex:Int):Int {}
+	public function getLineText(lineIndex:Int):String {}
+	public function getParagraphLength(charIndex:Int):Int {}
+}
+
+class lime.text.Font
+{
+	public var ascender:Int;
+	public var descender:Int;
+	public var height:Int;
+	public var name(default, null):String;
+	public var numGlyphs:Int;
+	public var src:Dynamic;
+	public var underlinePosition:Int;
+	public var underlineThickness:Int;
+	public var unitsPerEM:Int;
+
+	public function new(name:String = null) {}
+	public function decompose():NativeFontData {}
+	public static function fromBytes(bytes:Bytes):Font {}
+	public static function fromFile(path:String):Font {}
+	public static function loadFromBytes(bytes:Bytes):Future<Font> {}
+	public static function loadFromFile(path:String):Future<Font> {}
+	public static function loadFromName(path:String):Future<Font> {}
+	public function getGlyph(character:String):Glyph {}
+	public function getGlyphs(characters:String = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^`'\"/\\&*()[]{}<>|:;_-+=?,. "):Array<Glyph> {}
+	public function getGlyphMetrics(glyph:Glyph):GlyphMetrics {}
+	public function renderGlyph(glyph:Glyph, fontSize:Int):Image {}
+	public function renderGlyphs(glyphs:Array<Glyph>, fontSize:Int):Map<Glyph, Image> {}
+}
+
+typedef lime.text.Font.NativeFontData =
+{
+	var has_kerning:Bool;
+	var is_fixed_width:Bool;
+	var has_glyph_names:Bool;
+	var is_italic:Bool;
+	var is_bold:Bool;
+	var num_glyphs:Int;
+	var family_name:String;
+	var style_name:String;
+	var em_size:Int;
+	var ascend:Int;
+	var descend:Int;
+	var height:Int;
+	var glyphs:Array<NativeGlyphData>;
+	var kerning:Array<NativeKerningData>;
+}
+
+typedef lime.text.Font.NativeGlyphData =
+{
+	var char_code:Int;
+	var advance:Int;
+	var min_x:Int;
+	var max_x:Int;
+	var min_y:Int;
+	var max_y:Int;
+	var points:Array<Int>;
+}
+
+typedef lime.text.Font.NativeKerningData =
+{
+	var left_glyph:Int;
+	var right_glyph:Int;
+	var x:Int;
+	var y:Int;
+}

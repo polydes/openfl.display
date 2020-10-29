@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<attribute-types>
+	<attribute-type
+		tag="displayobject"
+		typeHx="DisplayObject"
+		longTypeHx="openfl.display.DisplayObject"
+		displayName="Display Object"
+		fieldHint="display object" />
+	<attribute-type
+		tag="displayobjectcontainer"
+		typeHx="DisplayObjectContainer"
+		longTypeHx="openfl.display.DisplayObjectContainer"
+		displayName="Display Object Container"
+		fieldHint="container"
+		extends="openfl.display.DisplayObject" />
+	<attribute-type
+		tag="textfield"
+		typeHx="TextField"
+		longTypeHx="openfl.text.TextField"
+		displayName="Text Field"
+		fieldHint="text field"
+		extends="openfl.display.DisplayObject" />
+	<attribute-type
+		tag="textformat"
+		typeHx="TextFormat"
+		longTypeHx="openfl.text.TextFormat"
+		displayName="Text Format"
+		fieldHint="text format" />
+</attribute-types>
