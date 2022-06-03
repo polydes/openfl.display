@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stencyl-addons>
+
+	<palette-addon target="stencyl-behavior-palette">
+		
+		<!-- OpenFL Display Objects -->
+		<category title="Display Objects" color="cyan">
+
+			<section title="Scene">
+
+				<!-- Layers -->
+				<header title="Layers" />
+				<block tag="openfl-display-new-layer" />
+				<block tag="openfl-display-add-layer" />
+				<block tag="openfl-display-get-layer" />
+					
+			</section>
+			
+			<!-- Containers -->
+			<section title="Containers">
+
+				<!-- Containers -->
+				<header title="Containers" />
+				<block tag="openfl-display-new-container" />
+				<block tag="displayobjc-addChild" />
+				<block tag="displayobjc-removeChild" />
+			
+			</section>
+			
+			<!-- Objects -->
+			<section title="Objects">
+				
+				<!-- Position -->
+				<header title="Position" />
+				<block tag="displayobj-get-pos-dd" />
+				<block tag="displayobj-set-pos-dd" />
+
+				<!-- Properties -->
+				<header title="Properties" />
+				<block tag="displayobj-get-alpha" />
+				<block tag="displayobj-set-alpha" />
+				
+			</section>
+			
+			<!-- Text -->
+			<section title="Text">
+				
+				<!-- Objects -->
+				<header title="Objects" />
+				<block tag="tf-new" />
+				
+				<!-- Field Appearance -->
+				<header title="Field Appearance" />
+				<block tag="tf-get-bgborder-dd" />
+				<block tag="tf-set-bgborder-dd" />
+				<block tag="tf-get-bgborderColor-dd" />
+				<block tag="tf-set-bgborderColor-dd" />
+				<block tag="tf-get-displayAsPassword" />
+				<block tag="tf-set-displayAsPassword" />
+				
+				<!-- Text Style -->
+				<header title="Text Style" />
+				<block tag="tf-get-embedFonts" />
+				<block tag="tf-set-embedFonts" />
+				<block tag="tf-get-defaultTextFormat" />
+				<block tag="tf-set-defaultTextFormat" />
+				<block tag="tf-get-textColor" />
+				<block tag="tf-set-textColor" />
+				<block tag="tf-getTextFormat" />
+				<block tag="tf-setTextFormat" />
+				
+				<!-- Text Format -->
+				<header title="Text Format" />
+				<block tag="tfformat-new" />
+				<block tag="tfformat-set-align-dd" />
+				<block tag="tfformat-get-font" />
+				<block tag="tfformat-set-font" />
+				<block tag="tfformat-set-embedded-font-path" />
+				<block tag="tfformat-get-styling-dd" />
+				<block tag="tfformat-set-styling-dd" />
+				<block tag="tfformat-get-indentmargin-dd" />
+				<block tag="tfformat-set-indentmargin-dd" />
+				<block tag="tf-get-color" />
+				<block tag="tf-set-color" />
+				<block tag="tf-get-letterSpacing" />
+				<block tag="tf-set-letterSpacing" />
+
+				<!-- Text Appearance -->
+				<header title="Text Appearance" />
+				<block tag="tf-set-antiAliasType-dd" />
+				<block tag="tf-set-gridFitType-dd" />
+				<block tag="tf-get-sharpness" />
+				<block tag="tf-set-sharpness" />
+
+				<!-- Wrapping -->
+				<header title="Wrapping" />
+				<block tag="tf-set-autoSize-dd" />
+				<block tag="tf-get-multilinewordwrap-dd" />
+				<block tag="tf-set-multilinewordwrap-dd" />
+				<block tag="tf-get-numLines" />
+				
+				<!-- Scrolling -->
+				<header title="Scrolling" />
+				<block tag="tf-get-bottomScrollV" />
+				<block tag="tf-get-maxScrollH" />
+				<block tag="tf-get-maxScrollV" />
+				<block tag="tf-get-scrollH" />
+				<block tag="tf-set-scrollH" />
+				<block tag="tf-get-scrollV" />
+				<block tag="tf-set-scrollV" />
+				<block tag="tf-get-mouseWheelEnabled" />
+				<block tag="tf-set-mouseWheelEnabled" />
+				
+				<!-- Text Content -->
+				<header title="Text Content" />
+				<block tag="tf-get-text-dd" />
+				<block tag="tf-set-text-dd" />
+				<block tag="tf-get-length" />
+				<block tag="tf-appendText" />
+				<block tag="tf-replaceText" />
+				
+				<!-- Editable -->
+				<header title="Editable" />
+				<block tag="tf-set-type-dd" />
+				<block tag="tf-get-maxChars" />
+				<block tag="tf-set-maxChars" />
+				<block tag="tf-get-restrict" />
+				<block tag="tf-set-restrict" />
+				
+				<!-- Selection -->
+				<header title="Selection" />
+				<block tag="tf-get-caretIndex" />
+				<block tag="tf-get-selectable" />
+				<block tag="tf-set-selectable" />
+				<block tag="tf-get-selectionBeginIndex" />
+				<block tag="tf-get-selectionEndIndex" />
+				<block tag="tf-setSelection" />
+				<block tag="tf-replaceSelectedText" />
+				
+				<!-- Metrics -->
+				<header title="Metrics" />
+				<block tag="tf-get-textHeight" />
+				<block tag="tf-get-textWidth" />
+				
+			</section>
+			
+			<!-- Filters -->
+			<section title="Filters">
+				
+				<!-- Set Filters -->
+				<header title="Set Filters" />
+				<block tag="displayobj-add-filter" />
+				<block tag="displayobj-clear-filters" />
+				
+				<!-- Drop Shadow -->
+				<header title="Drop Shadow" />
+				<block tag="filters-build-dropshadow" />
+				<block tag="filters-set-dropshadow-number" />
+				<block tag="filters-set-dropshadow-color" />
+				<block tag="filters-set-dropshadow-bool" />
+				
+				<!-- Glow -->
+				<header title="Glow" />
+				<block tag="filters-build-glow" />
+				<block tag="filters-set-glow-number" />
+				<block tag="filters-set-glow-color" />
+				<block tag="filters-set-glow-bool" />
+				
+			</section>
+			
+			<!-- Imports -->
+			<section title="Imports">
+
+				<!-- Imports -->
+				<header title="Imports" />
+				<block tag="openfl-display-imports" />
+				<block tag="openfl-filters-imports" />
+				<block tag="openfl-text-imports" />
+			
+			</section>
+			
+		</category>
+	</palette-addon>
+
+</stencyl-addons>
