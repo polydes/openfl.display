@@ -21,6 +21,12 @@
 			<text order="0" />
 		</fields>
 	</block>
+	<block tag="openfl-display-set-stage-focus" spec="set stage focus to %0" code="Engine.stage.focus = ~;" type="action" color="green" returns="void">
+		<fields>
+			<displayobject order="0" />
+		</fields>
+	</block>
+	<block tag="openfl-display-get-stage-focus" spec="get stage focus" code="Engine.stage.focus" type="normal" color="green" returns="displayobject" />
 	
 	<block tag="displayobjc-addChild" spec="add %0 to %1" code="#1.addChild(#0);" type="action" color="cyan" returns="void">
 		<fields>
