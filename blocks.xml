@@ -49,13 +49,13 @@
 			<c text="height" code="height" />
 		</choices>
 	</dropdown>
-	<block tag="displayobj-get-pos-dd" spec="get %1 for %0" code="~.~" type="normal" color="blue" returns="number">
+	<block tag="displayobj-get-pos-dd" spec="get %1 for %0" code="~.~ / Engine.SCALE" type="normal" color="blue" returns="number">
 		<fields>
 			<displayobject order="0"/>
 			<dropdown order="1" id="pos-dd" />
 		</fields>
 	</block>
-	<block tag="displayobj-set-pos-dd" spec="set %1 for %0 to %2" code="~.~ = ~;" type="action" color="blue" returns="void">
+	<block tag="displayobj-set-pos-dd" spec="set %1 for %0 to %2" code="~.~ = ~ * Engine.SCALE;" type="action" color="blue" returns="void">
 		<fields>
 			<displayobject order="0"/>
 			<dropdown order="1" id="pos-dd" />
@@ -172,7 +172,7 @@
 	
 	<!-- openfl.text blocks -->
 	
-	<block tag="tf-new" spec="new textfield" code="new TextField()" type="normal" color="green" returns="textfield" />
+	<block tag="tf-new" spec="new textfield" code="openfl.display.Blocks.createNewTextField()" type="normal" color="green" returns="textfield" />
 	<dropdown id="bgborder-dd">
 		<choices>
 			<c text="background" code="background"/>
@@ -344,22 +344,22 @@
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-get-maxScrollH" spec="max horizontal scrolling pos (pixels) for %0" code="~.maxScrollH" type="normal" color="green" returns="int">
+	<block tag="tf-get-maxScrollH" spec="max horizontal scrolling pos (pixels) for %0" code="~.maxScrollH / Engine.SCALE" type="normal" color="green" returns="int">
 		<fields>
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-get-maxScrollV" spec="max vertical scrolling pos (lines) for %0" code="~.maxScrollV" type="normal" color="green" returns="int">
+	<block tag="tf-get-maxScrollV" spec="max vertical scrolling pos (lines) for %0" code="~.maxScrollV * Engine.SCALE" type="normal" color="green" returns="int">
 		<fields>
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-get-scrollH" spec="horizontal scrolling pos (pixels) for %0" code="~.scrollH" type="normal" color="green" returns="int">
+	<block tag="tf-get-scrollH" spec="horizontal scrolling pos (pixels) for %0" code="~.scrollH / Engine.SCALE" type="normal" color="green" returns="int">
 		<fields>
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-set-scrollH" spec="set horizontal scrolling pos (pixels) for %0 to %1" code="~.scrollH = ~;" type="action" color="green" returns="void">
+	<block tag="tf-set-scrollH" spec="set horizontal scrolling pos (pixels) for %0 to %1" code="~.scrollH = ~ * Engine.SCALE;" type="action" color="green" returns="void">
 		<fields>
 			<textfield order="0"/>
 			<int order="1"/>
@@ -501,17 +501,17 @@
 			<text order="1"/>
 		</fields>
 	</block>
-	<block tag="tf-get-textHeight" spec="height of text for %0" code="~.textHeight" type="normal" color="green" returns="number">
+	<block tag="tf-get-textHeight" spec="height of text for %0" code="~.textHeight / Engine.SCALE" type="normal" color="green" returns="number">
 		<fields>
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-get-textWidth" spec="width of text for %0" code="~.textWidth" type="normal" color="green" returns="number">
+	<block tag="tf-get-textWidth" spec="width of text for %0" code="~.textWidth / Engine.SCALE" type="normal" color="green" returns="number">
 		<fields>
 			<textfield order="0"/>
 		</fields>
 	</block>
-	<block tag="tfformat-new" spec="new textformat" code="new TextFormat()" type="normal" color="green" returns="textformat" />
+	<block tag="tfformat-new" spec="new textformat" code="openfl.display.Blocks.createNewTextFormat()" type="normal" color="green" returns="textformat" />
 	<block tag="tfformat-set-align-dd" spec="set alignment for %0 to %1" code="~.align = ~;" type="action" color="green" returns="void">
 		<fields>
 			<textformat order="0"/>
@@ -576,13 +576,13 @@
 			<c text="leading" code="leading" />
 		</choices>
 	</dropdown>
-	<block tag="tfformat-get-indentmargin-dd" spec="%1 for %0" code="~.~" type="normal" color="green" returns="int">
+	<block tag="tfformat-get-indentmargin-dd" spec="%1 for %0" code="Std.int(~.~ / Engine.SCALE)" type="normal" color="green" returns="int">
 		<fields>
 			<textformat order="0"/>
 			<dropdown order="1" id="tfformat-indentmargin-dd" />
 		</fields>
 	</block>
-	<block tag="tfformat-set-indentmargin-dd" spec="set %1 for %0 to %2" code="~.~ = ~;" type="action" color="green" returns="void">
+	<block tag="tfformat-set-indentmargin-dd" spec="set %1 for %0 to %2" code="~.~ = Std.int(~ * Engine.SCALE);" type="action" color="green" returns="void">
 		<fields>
 			<textformat order="0"/>
 			<dropdown order="1" id="tfformat-indentmargin-dd" />
@@ -600,12 +600,12 @@
 			<color order="1"/>
 		</fields>
 	</block>
-	<block tag="tf-get-letterSpacing" spec="letter spacing for %0" code="~.letterSpacing" type="normal" color="green" returns="number">
+	<block tag="tf-get-letterSpacing" spec="letter spacing for %0" code="~.letterSpacing / Engine.SCALE" type="normal" color="green" returns="number">
 		<fields>
 			<textformat order="0"/>
 		</fields>
 	</block>
-	<block tag="tf-set-letterSpacing" spec="set letter spacing for %0 to %1" code="~.letterSpacing = ~;" type="action" color="green" returns="void">
+	<block tag="tf-set-letterSpacing" spec="set letter spacing for %0 to %1" code="~.letterSpacing = ~ * Engine.SCALE;" type="action" color="green" returns="void">
 		<fields>
 			<textformat order="0"/>
 			<number order="1"/>

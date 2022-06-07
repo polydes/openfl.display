@@ -1,6 +1,8 @@
 package openfl.display;
 
 import openfl.display.BlendMode;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
 import com.stencyl.Engine;
 import com.stencyl.models.scene.layers.RegularLayer;
 
@@ -25,5 +27,23 @@ class Blocks
 			regLayer.ID = Engine.engine.getNextLayerID();
 		
 		Engine.engine.insertLayer(regLayer, order);
+	}
+
+	public static function createNewTextField()
+	{
+		var tf = new TextField();
+		tf.width *= Engine.SCALE;
+		tf.height *= Engine.SCALE;
+		var defaults = tf.defaultTextFormat;
+		defaults.size = Std.int(12 * Engine.SCALE);
+		tf.defaultTextFormat = defaults;
+		return tf;
+	}
+
+	public static function createNewTextFormat()
+	{
+		var tf = new TextFormat();
+		tf.size = Std.int(12 * Engine.SCALE);
+		return tf;
 	}
 }
