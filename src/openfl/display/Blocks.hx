@@ -46,4 +46,15 @@ class Blocks
 		tf.size = Std.int(12 * Engine.SCALE);
 		return tf;
 	}
+
+	public static function setMouseEnabled(value:Bool)
+	{
+		#if flash
+		Engine.movieClip.mouseChildren = value;
+		Engine.movieClip.mouseChildren = value;
+		#end
+
+		Engine.engine.root.mouseChildren = value;
+		Engine.engine.root.mouseEnabled = value;
+	}
 }

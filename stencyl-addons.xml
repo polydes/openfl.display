@@ -18,6 +18,7 @@
 				<header title="Stage" />
 				<block tag="openfl-display-set-stage-focus" />
 				<block tag="openfl-display-get-stage-focus" />
+				<block tag="openfl-display-set-mouse-enabled" />
 				
 			</section>
 			

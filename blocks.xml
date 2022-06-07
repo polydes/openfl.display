@@ -27,6 +27,11 @@
 		</fields>
 	</block>
 	<block tag="openfl-display-get-stage-focus" spec="get stage focus" code="Engine.stage.focus" type="normal" color="green" returns="displayobject" />
+	<block tag="openfl-display-set-mouse-enabled" spec="set stage mouse interactivity enabled to %0" code="openfl.display.Blocks.setMouseEnabled(~);" type="action" color="green" returns="void">
+		<fields>
+			<bool order="0" />
+		</fields>
+	</block>
 	
 	<block tag="displayobjc-addChild" spec="add %0 to %1" code="#1.addChild(#0);" type="action" color="cyan" returns="void">
 		<fields>
