@@ -2,5 +2,5 @@ name=OpenFL Display Classes
 description=Exposes the OpenFL Display APIs as blocks
 author=Justin
 website=http://www.stencyl.com
-version=1.0
+version=1.1.0
 compatibility=all
