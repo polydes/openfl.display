@@ -1,6 +1,0 @@
-name=OpenFL Display Classes
-description=Exposes the OpenFL Display APIs as blocks
-author=Justin
-website=http://www.polydes.com/repo/engine/openfl.display
-version=1.1.0
-compatibility=all

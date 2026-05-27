@@ -1,0 +1,19 @@
+{
+  "group": "com.polydes.openfl",
+  "id": "openfl.display",
+  "name": "OpenFL Display Classes",
+  "description": "Exposes the OpenFL Display APIs as blocks",
+  "tags": ["graphics"],
+  "type": "game",
+  "author": "Justin Espedal",
+  "website": "https://www.polydes.com/repo/engine/openfl.display",
+  "repository": "https://www.polydes.com/repo",
+  "target": "stencyl-4.2.0",
+  "version": "1.2.0",
+
+  "icon": "icon.png",
+
+  "engine": {
+    "compatibility": "all"
+  }
+}
