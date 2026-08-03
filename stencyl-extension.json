@@ -6,7 +6,7 @@
   "tags": ["graphics"],
   "type": "game",
   "author": "Justin Espedal",
-  "website": "https://www.polydes.com/repo/engine/openfl.display",
+  "website": "https://www.polydes.com/repo/extensions/openfl.display",
   "repository": "https://www.polydes.com/repo",
   "target": "stencyl-4.2.0",
   "version": "1.2.0",
